@@ -22,7 +22,7 @@ body {
   color: black; /* Black color for the close button */
   position: absolute;
   top: -12px;
-  right: 700px;
+  right: 450px;
   cursor: pointer;
 }
 
@@ -267,4 +267,15 @@ body {
 
 .copyright p {
   margin: 0;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 14px;
 }

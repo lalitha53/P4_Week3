@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 import './Userdashboard.css';
 
 const Userdashboard = () => {
-  // State to track the visibility of the top bar
+  // State to track the visibility of the top bar and cart items
   const [isBannerVisible, setBannerVisible] = useState(true);
+  const [cartItems, setCartItems] = useState([]); // State to track items in the cart
 
   // Function to close the banner
   const closeBanner = () => {
     setBannerVisible(false);
+  };
+
+  // Function to add an item to the cart (can be modified to add real products)
+  const addToCart = (item) => {
+    setCartItems([...cartItems, item]);
+  };
+
+  // Function to view the cart
+  const viewCart = () => {
+    console.log(cartItems); // Just logs for now, can open a cart modal or page
   };
 
   return (
@@ -38,14 +49,18 @@ const Userdashboard = () => {
         </div>
 
         <div className="right-icons">
-          <a href="#"><i className="fas fa-shopping-bag"></i></a>
+          <a href="#" onClick={viewCart}>
+            <i className="fas fa-shopping-cart"></i>
+            {cartItems.length > 0 && (
+              <span className="cart-count">{cartItems.length}</span>
+            )}
+          </a>
           <a href="#"><i className="fas fa-heart"></i></a> {/* Wishlist Icon */}
-          <a href="#"><i className="fas fa-shopping-cart"></i></a> {/* Cart Icon */}
-          <a href="#">Log In</a>
+          <a href="#"><i className="fas fa-user"></i></a> {/* User Icon */}
         </div>
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Section for Summer */}
       <div className="hero">
         <img
           alt="A woman in a black dress standing in a field of tall grass under a clear blue sky"
@@ -53,47 +68,35 @@ const Userdashboard = () => {
         />
         <div className="text">
           <h1>SUMMER COLLECTION</h1>
-          <button>Shop Now</button>
+          <button onClick={() => addToCart('Summer Collection Item')}>Add to Cart</button>
         </div>
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Section for Winter */}
       <div className="hero">
         <img
-          alt="A woman in a black dress standing in a field of tall grass under a clear blue sky"
-          src="/winter_collection.png"
+          alt="A woman wearing a winter coat in a snowy landscape"
+          src="https://storage.googleapis.com/a1aa/image/NYBgqODLtiYQJZlAwx9fcWEdAAvfG9G8hBA2dD3gUtx7cYCUA.jpg"
         />
         <div className="text">
           <h1>WINTER COLLECTION</h1>
-          <button>Shop Now</button>
+          <button onClick={() => addToCart('Winter Collection Item')}>Add to Cart</button>
         </div>
       </div>
 
-      {/* Hero Section */}
+      {/* Spring Collection */}
       <div className="hero">
         <img
-          alt="A woman in a black dress standing in a field of tall grass under a clear blue sky"
-          src="/Spring_collection.png"
+          alt="A woman wearing a spring outfit in a vibrant garden"
+          src="https://storage.googleapis.com/a1aa/image/4XB5yfSGQ3XMEKLnBUhhXCpoD5dCIQz3rP2WtBSiL24mGNBKA.jpg"
         />
         <div className="text">
           <h1>SPRING COLLECTION</h1>
-          <button>Shop Now</button>
+          <button onClick={() => addToCart('Spring Collection Item')}>Add to Cart</button>
         </div>
       </div>
 
-      {/* Hero Section */}
-      <div className="hero">
-        <img
-          alt="A woman in a black dress standing in a field of tall grass under a clear blue sky"
-          src="/rainy_collection.png"
-        />
-        <div className="text">
-          <h1>RAINY COLLECTION</h1>
-          <button>Shop Now</button>
-        </div>
-      </div>
-
-      <div className="subtext">EVERYDAY APPAREL FOR EVERYONE</div>
+      <div className="subtext">EVERYDAY APPAREL FOR EVERYONE. EVERYDAY NEW COLLECTION</div>
 
       {/* New In Section */}
       <div className="new-in-section">

@@ -1,0 +1,115 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    background-color: #ecf0f1;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .main-content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .main-content .search-create {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .main-content .search-create input {
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    width: 200px;
+  }
+  
+  .main-content .search-create button {
+    background-color: #e67e22;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .main-content .search-create button:hover {
+    background-color: #d35400;
+  }
+  
+  .main-content table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .main-content table th, .main-content table td {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .main-content table th {
+    background-color: #ecf0f1;
+    font-weight: 700;
+  }
+  
+  .main-content table td {
+    border-bottom: 1px solid #bdc3c7;
+  }
+  
+  .main-content table td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .main-content table td .fa-check-circle {
+    color: #e67e22;
+  }
+  
+  .main-content table td .fa-times-circle {
+    color: #e74c3c;
+  }
+  
+  .main-content table td .fa-edit {
+    cursor: pointer;
+  }
+  
+  .main-content .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .main-content .pagination select {
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+  }
+  
+  .main-content .pagination .page-info {
+    font-size: 14px;
+  }
+  
+  .main-content .pagination .page-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .main-content .pagination .page-nav i {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  

@@ -1,7 +1,14 @@
-import React from 'react';
-import './Admindashboard.css';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './AdminDashboard.css';
 
 const AdminDashboard = () => {
+  const [isCategoryOpen, setIsCategoryOpen] = useState(false); // State to toggle categories
+
+  const toggleCategory = () => {
+    setIsCategoryOpen(!isCategoryOpen);
+  };
+
   return (
     <div className="admin-dashboard">
       <div className="sidebar">
@@ -10,18 +17,28 @@ const AdminDashboard = () => {
           StyleU
         </h2>
         <ul>
-          <li><i className="fas fa-tachometer-alt"></i>Dashboard</li>
-          <li><i className="fas fa-users"></i>User Manage</li>
-          <li><i className="fas fa-list"></i>Category Manage</li>
-          <li><i className="fas fa-tags"></i>Brand Manage</li>
-          <li><i className="fas fa-tag"></i>Tag Manage</li>
-          <li><i className="fas fa-box"></i>Product Manage</li>
-          <li><i className="fas fa-shopping-cart"></i>Order Manage</li>
-          <li><i className="fas fa-image"></i>Banner Manage</li>
-          <li><i className="fas fa-user"></i>Dashboard Users</li>
-          <li><i className="fas fa-gift"></i>Offer Manage</li>
-          <li><i className="fas fa-cogs"></i>Others Manage</li>
-          <li><i className="fas fa-cog"></i>Settings</li>
+          <li><Link to="/admin/dashboard"><i className="fas fa-tachometer-alt"></i>Dashboard</Link></li>
+          <li><Link to="/user-manage"><i className="fas fa-users"></i>User Manage</Link></li>
+          <li className="dropdown">
+            <button className="dropdown-btn" onClick={toggleCategory}>
+              <i className="fas fa-list"></i> Category Manage
+            </button>
+            {isCategoryOpen && (
+              <ul className="dropdown-content">
+                <li><Link to="/category-manage">Manage Categories</Link></li>
+                <li><Link to="/sub-categories">Sub Categories</Link></li> {/* Add this line */}
+              </ul>
+            )}
+          </li>
+          <li><Link to="/brand-manage"><i className="fas fa-tags"></i>Brand Manage</Link></li>
+          <li><Link to="/tag-manage"><i className="fas fa-tag"></i>Tag Manage</Link></li>
+          <li><Link to="/product-manage"><i className="fas fa-box"></i>Product Manage</Link></li>
+          <li><Link to="/order-manage"><i className="fas fa-shopping-cart"></i>Order Manage</Link></li>
+          <li><Link to="/banner-manage"><i className="fas fa-image"></i>Banner Manage</Link></li>
+          <li><Link to="/dashboard-users"><i className="fas fa-user"></i>Dashboard Users</Link></li>
+          <li><Link to="/offer-manage"><i className="fas fa-gift"></i>Offer Manage</Link></li>
+          <li><Link to="/others-manage"><i className="fas fa-cogs"></i>Others Manage</Link></li>
+          <li><Link to="/settings"><i className="fas fa-cog"></i>Settings</Link></li>
         </ul>
       </div>
 

@@ -1,0 +1,109 @@
+.content {
+    background-color: #f7fafc;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .content-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .content-header .filters {
+    display: flex;
+    align-items: center;
+  }
+  .content-header .filters input,
+  .content-header .filters button {
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+  }
+  .content-header .filters button {
+    background-color: #edf2f7;
+    cursor: pointer;
+  }
+  .content-header .filters button:hover {
+    background-color: #e2e8f0;
+  }
+  .content-header .filters button.excel {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    border: 1px solid #e53e3e;
+  }
+  .content-header .filters button.excel:hover {
+    background-color: #fed7d7;
+  }
+  .table-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table th,
+  table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  table th {
+    background-color: #f7fafc;
+    font-weight: 500;
+  }
+  table td {
+    font-size: 14px;
+  }
+  table td .status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 500;
+  }
+  table td .status.received {
+    background-color: #ed8936;
+  }
+  table td .status.cancelled {
+    background-color: #e53e3e;
+  }
+  table td .payable-amount {
+    color: #38a169;
+    font-weight: 500;
+  }
+  table td .payable-mode.cash {
+    background-color: #f6ad55;
+  }
+  table td .payable-mode.online {
+    background-color: #3182ce;
+  }
+  table td .action button {
+    background-color: #ed8936;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  table td .action button:hover {
+    background-color: #dd6b20;
+  }
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .pagination select {
+    padding: 5px;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+  }
+  

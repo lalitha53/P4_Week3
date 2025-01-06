@@ -8,6 +8,10 @@ import Signup from './components/Signup';
 import ForgotPassword from './components/Forgotpassword';
 import UserDashboard from './components/Userdashboard';
 import AdminDashboard from './components/Admindashboard';
+import UserManage from './components/UserManage';
+import CategoryManage from './components/categoryManage';
+import SubCategories from './components/SubCategories';
+import Orders from './components/Orders';
 
 const App = () => {
     return (
@@ -18,6 +22,10 @@ const App = () => {
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/user-dashboard" element={<UserDashboard />} />
                 <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                <Route path="/user-manage" element={<UserManage />} />
+                <Route path="/category-manage" element={<CategoryManage />} />
+                <Route path="/sub-categories" component={<SubCategories />} />
+                <Route path="/order-manage" element={<Orders />} />
             </Routes>
         </Router>
     );

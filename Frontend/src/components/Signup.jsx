@@ -13,7 +13,6 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (name === '' || email === '' || password === '' || confirmPassword === '') {
       setError('Please provide name, email, and password');
     } else if (password !== confirmPassword) {
@@ -21,18 +20,13 @@ function Signup() {
     } else {
       try {
         setError('');
-        console.log('Submitting Sign Up with data:', { name, email, password });  // Debugging log
-        const response = await axios.post('http://localhost:2200/api/auth/signup', {
+        await axios.post('http://localhost:2200/api/auth/signup', {
           name,
           email,
           password,
         });
-        console.log('Sign Up Response:', response.data);  // Log the response data
-
-        // Redirect to login page after successful signup
-        navigate('/login');
+        navigate('/login'); // Redirect to login after successful signup
       } catch (err) {
-        console.error('Sign Up Error:', err);  // Log any errors for debugging
         setError(err.response?.data?.message || 'Error during sign up');
       }
     }

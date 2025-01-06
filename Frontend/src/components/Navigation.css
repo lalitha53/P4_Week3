@@ -1,0 +1,21 @@
+.navigation-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #333; /* Dark background */
+    padding: 10px 20px;
+  }
+  
+  .left-links a {
+    text-decoration: none;
+    color: white; /* White text */
+    margin-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .left-links a:hover {
+    color: #ff758c; /* Pink hover color to match the theme */
+  }
+  

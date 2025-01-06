@@ -16,23 +16,21 @@ function Login() {
     } else {
       setError('');
       try {
-        // Log the data sent to the backend for debugging
-        console.log('Login Request Data:', { email, password });
-
-        // Send login request to backend
         const response = await axios.post('http://localhost:2200/api/auth/login', {
           email,
           password,
         });
-
-        // Log the response for debugging
-        console.log('Login Response:', response.data);
-
-        // If login successful, save token and navigate to dashboard or home page
-        localStorage.setItem('token', response.data.token); // Store the token in localStorage
-        navigate('/dashboard'); // Redirect to the dashboard (or home page)
+  
+        localStorage.setItem('token', response.data.token);
+        const role = response.data.role;
+  
+        // Navigate to the appropriate dashboard based on role
+        if (role === 'admin') {
+          navigate('/admin-dashboard');
+        } else {
+          navigate('/user-dashboard');
+        }
       } catch (err) {
-        console.error('Login Error:', err);  // Log the error for debugging
         setError(err.response?.data?.message || 'Login failed');
       }
     }
